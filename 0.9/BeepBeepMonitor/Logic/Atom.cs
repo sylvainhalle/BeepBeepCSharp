@@ -100,11 +100,11 @@ public class Atom : Operator
 	}
 
     /**
-     * Re-implementation of hashValue for atoms. Two atoms are hashed
+     * Re-implementation of GetHashCode for atoms. Two atoms are hashed
      * in the same way if their symbol has the same length.
      * @return
      */
-	public int hashValue()
+	public override int GetHashCode()
 	{
 		return m_symbol.Length;
 	}

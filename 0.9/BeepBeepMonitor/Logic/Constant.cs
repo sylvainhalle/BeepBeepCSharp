@@ -79,7 +79,7 @@ public class Constant : Atom
 		return this;
 	}
 	
-	public Operator evaluate(Atom variable, Operator val)
+	public override Operator evaluate(Atom variable, Operator val)
 	{
 		if (m_symbol == "TRUE")
 		{
