@@ -401,7 +401,7 @@ public class WatcherNode : SequentNode
 					// This should never happen! All atoms should evaluate
           			// down
           			// to either true or false.
-					//assert(false);
+					System.Diagnostics.Debug.Assert (false, "Unrecognized operator in watcher node");
 					return outSet;
 				}
 			}

@@ -391,7 +391,7 @@ public class XMLDocument
 		GroupCollection g = m2.Groups;
 		
 		path_left = g[1].ToString();
-		e = e.Substring(m[m.Count - 1].Index).Trim();
+		e = e.Substring(m[0].Index + m[0].Length).Trim();
 		left = getPath(path_left);
 		
 		if (e.Length == 0)
@@ -522,7 +522,7 @@ public class XMLDocument
 		GroupCollection g = m2.Groups;
 		
 		string elementName = g[1].ToString();
-		string subPath = path.Substring(m[m.Count - 1].Index);
+		string subPath = path.Substring(m[0].Index + m[0].ToString().Length);
 		
 		foreach (XMLDocument xd in m_children)
 		{
