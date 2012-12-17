@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DA50B956-E36E-4901-A9BD-BC1C3DA6978D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>BeepBeepMonitor</RootNamespace>
+    <AssemblyName>BeepBeepMonitor</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="Logic\Atom.cs" />
+    <Compile Include="Logic\BinaryOperator.cs" />
+    <Compile Include="Logic\Constant.cs" />
+    <Compile Include="Logic\ConstantPath.cs" />
+    <Compile Include="Logic\FOExists.cs" />
+    <Compile Include="Logic\FOForAll.cs" />
+    <Compile Include="Logic\FOQuantifier.cs" />
+    <Compile Include="Logic\LTLStringParser.cs" />
+    <Compile Include="Logic\OPlus.cs" />
+    <Compile Include="Logic\Operator\Operator.cs" />
+    <Compile Include="Logic\Operator\OperatorAF.cs" />
+    <Compile Include="Logic\Operator\OperatorAG.cs" />
+    <Compile Include="Logic\Operator\OperatorAU.cs" />
+    <Compile Include="Logic\Operator\OperatorAV.cs" />
+    <Compile Include="Logic\Operator\OperatorAX.cs" />
+    <Compile Include="Logic\Operator\OperatorAnd.cs" />
+    <Compile Include="Logic\Operator\OperatorEF.cs" />
+    <Compile Include="Logic\Operator\OperatorEG.cs" />
+    <Compile Include="Logic\Operator\OperatorEU.cs" />
+    <Compile Include="Logic\Operator\OperatorEV.cs" />
+    <Compile Include="Logic\Operator\OperatorEX.cs" />
+    <Compile Include="Logic\Operator\OperatorEquals.cs" />
+    <Compile Include="Logic\Operator\OperatorF.cs" />
+    <Compile Include="Logic\Operator\OperatorG.cs" />
+    <Compile Include="Logic\Operator\OperatorGreaterThan.cs" />
+    <Compile Include="Logic\Operator\OperatorImplies.cs" />
+    <Compile Include="Logic\Operator\OperatorMinus.cs" />
+    <Compile Include="Logic\Operator\OperatorNot.cs" />
+    <Compile Include="Logic\Operator\OperatorOr.cs" />
+    <Compile Include="Logic\Operator\OperatorSmallerThan.cs" />
+    <Compile Include="Logic\Operator\OperatorStringParser.cs" />
+    <Compile Include="Logic\Operator\OperatorU.cs" />
+    <Compile Include="Logic\Operator\OperatorV.cs" />
+    <Compile Include="Logic\Operator\OperatorX.cs" />
+    <Compile Include="Logic\Operator\UnaryOperator.cs" />
+    <Compile Include="Runtime\LossOfSoundnessException.cs" />
+    <Compile Include="Runtime\Outcome.cs" />
+    <Compile Include="Runtime\RuntimeGenerator.cs" />
+    <Compile Include="Runtime\RuntimeMonitor.cs" />
+    <Compile Include="Runtime\Stub.cs" />
+    <Compile Include="Runtime\Symbolic\GeneratorNode.cs" />
+    <Compile Include="Runtime\Symbolic\LTLFOWatcher.cs" />
+    <Compile Include="Runtime\Symbolic\SequentNode.cs" />
+    <Compile Include="Runtime\Symbolic\SymbolicGenerator.cs" />
+    <Compile Include="Runtime\Symbolic\SymbolicWatcher.cs" />
+    <Compile Include="Runtime\Symbolic\WatcherMessage.cs" />
+    <Compile Include="Runtime\Symbolic\WatcherNode.cs" />
+    <Compile Include="Util\CommandLineProcessor.cs" />
+    <Compile Include="Util\ProcessCommunicator.cs" />
+    <Compile Include="Util\RegexIterator.cs" />
+    <Compile Include="Util\SimpleFileReader.cs" />
+    <Compile Include="Util\SimpleFileWriter.cs" />
+    <Compile Include="Util\SubsetIterator.cs" />
+    <Compile Include="XML\XMLDocument.cs" />
+    <Compile Include="BeepBeepMonitor.cs" />
+    <Compile Include="BeepBeepValidator.cs" />
+    <Compile Include="Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Logic\Atom.cs.meta" />
+    <None Include="Logic\BinaryOperator.cs.meta" />
+    <None Include="Logic\Constant.cs.meta" />
+    <None Include="Logic\ConstantPath.cs.meta" />
+    <None Include="Logic\FOExists.cs.meta" />
+    <None Include="Logic\FOForAll.cs.meta" />
+    <None Include="Logic\FOQuantifier.cs.meta" />
+    <None Include="Logic\LTLStringParser.cs.meta" />
+    <None Include="Logic\OPlus.cs.meta" />
+    <None Include="Logic\Operator.meta" />
+    <None Include="Logic\Operator\Operator.cs.meta" />
+    <None Include="Logic\Operator\OperatorAF.cs.meta" />
+    <None Include="Logic\Operator\OperatorAG.cs.meta" />
+    <None Include="Logic\Operator\OperatorAU.cs.meta" />
+    <None Include="Logic\Operator\OperatorAV.cs.meta" />
+    <None Include="Logic\Operator\OperatorAX.cs.meta" />
+    <None Include="Logic\Operator\OperatorAnd.cs.meta" />
+    <None Include="Logic\Operator\OperatorEF.cs.meta" />
+    <None Include="Logic\Operator\OperatorEG.cs.meta" />
+    <None Include="Logic\Operator\OperatorEU.cs.meta" />
+    <None Include="Logic\Operator\OperatorEV.cs.meta" />
+    <None Include="Logic\Operator\OperatorEX.cs.meta" />
+    <None Include="Logic\Operator\OperatorEquals.cs.meta" />
+    <None Include="Logic\Operator\OperatorF.cs.meta" />
+    <None Include="Logic\Operator\OperatorG.cs.meta" />
+    <None Include="Logic\Operator\OperatorGreaterThan.cs.meta" />
+    <None Include="Logic\Operator\OperatorImplies.cs.meta" />
+    <None Include="Logic\Operator\OperatorMinus.cs.meta" />
+    <None Include="Logic\Operator\OperatorNot.cs.meta" />
+    <None Include="Logic\Operator\OperatorOr.cs.meta" />
+    <None Include="Logic\Operator\OperatorSmallerThan.cs.meta" />
+    <None Include="Logic\Operator\OperatorStringParser.cs.meta" />
+    <None Include="Logic\Operator\OperatorU.cs.meta" />
+    <None Include="Logic\Operator\OperatorV.cs.meta" />
+    <None Include="Logic\Operator\OperatorX.cs.meta" />
+    <None Include="Logic\Operator\UnaryOperator.cs.meta" />
+    <None Include="Runtime\LossOfSoundnessException.cs.meta" />
+    <None Include="Runtime\Outcome.cs.meta" />
+    <None Include="Runtime\RuntimeGenerator.cs.meta" />
+    <None Include="Runtime\RuntimeMonitor.cs.meta" />
+    <None Include="Runtime\Stub.cs.meta" />
+    <None Include="Runtime\Symbolic.meta" />
+    <None Include="Runtime\Symbolic\GeneratorNode.cs.meta" />
+    <None Include="Runtime\Symbolic\LTLFOWatcher.cs.meta" />
+    <None Include="Runtime\Symbolic\SequentNode.cs.meta" />
+    <None Include="Runtime\Symbolic\SymbolicGenerator.cs.meta" />
+    <None Include="Runtime\Symbolic\SymbolicWatcher.cs.meta" />
+    <None Include="Runtime\Symbolic\WatcherMessage.cs.meta" />
+    <None Include="Runtime\Symbolic\WatcherNode.cs.meta" />
+    <None Include="Util\CommandLineProcessor.cs.meta" />
+    <None Include="Util\ProcessCommunicator.cs.meta" />
+    <None Include="Util\RegexIterator.cs.meta" />
+    <None Include="Util\SimpleFileReader.cs.meta" />
+    <None Include="Util\SimpleFileWriter.cs.meta" />
+    <None Include="Util\SubsetIterator.cs.meta" />
+    <None Include="XML\XMLDocument.cs.meta" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+</Project>
