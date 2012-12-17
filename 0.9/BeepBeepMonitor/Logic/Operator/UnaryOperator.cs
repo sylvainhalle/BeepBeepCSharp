@@ -74,15 +74,9 @@ public class UnaryOperator : Operator
      */
 	public override Operator evaluate (Atom variable, Operator val)
 	{
-      UnaryOperator uo = (UnaryOperator) this.Clone();
-      uo.m_symbol = m_symbol;
-      uo.m_operand = m_operand.evaluate(variable, val);
-      return uo;
-		/*
         //try
         //{
-            UnaryOperator op = new UnaryOperator();
-            op = this;
+            UnaryOperator op = (UnaryOperator)this.MemberwiseClone();
 
             op.m_symbol = m_symbol;
             op.m_operand = m_operand.evaluate(variable, val);

@@ -131,8 +131,7 @@ public class BinaryOperator : Operator
 	{
         //try
         //{
-            BinaryOperator bo = new BinaryOperator();
-            bo = this;
+            BinaryOperator bo = (BinaryOperator)this.MemberwiseClone();
 
             bo.m_symbol = m_symbol;
             bo.m_left = m_left.evaluate(variable, val);
