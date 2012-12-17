@@ -225,7 +225,7 @@ public class SymbolicWatcher : LTLFOWatcher
 		WatcherMessage m = new WatcherMessage(s);
 		
 		// Prepends the default message name to the queried paths
-		m.setPrependPath("/" + m_messageName + "/");
+		//m.setPrependPath("/" + m_messageName + "/");
 		update(m);
 	}
 	
