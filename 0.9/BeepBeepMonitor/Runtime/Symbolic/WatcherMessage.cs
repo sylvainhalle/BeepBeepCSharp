@@ -37,7 +37,7 @@ public class WatcherMessage
 	
 	public WatcherMessage(string s) : this()
 	{
-		m_xd = new XMLDocument();
+		m_xd = new XMLDocument(s);
 	}
 	
 	public void setPrependPath(string s)

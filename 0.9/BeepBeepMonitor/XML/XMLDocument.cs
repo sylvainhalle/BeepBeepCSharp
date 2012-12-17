@@ -152,11 +152,12 @@ public class XMLDocument
 
                 // Opening tag found at first position
 				xd.m_elementName = g[1].ToString();
-				inside_begin = g[g.Count - 1].Index;
+				inside_begin = g[2].Index + g[2].ToString().Length + 1;
 				
 				if (g[2].ToString().EndsWith("/"))
 				{
                     // Self-closing tag
+					// TODOC#: vérifier si les bornes sont exactes en C#
 					inside_end = g[g.Count - 1].Index;
 					tag_end = g[g.Count - 1].Index;
 					tag_has_children = false;
@@ -190,7 +191,7 @@ public class XMLDocument
 						{
                             // Matching closing tag
 							inside_end = inside_begin + m[0].Index;
-							tag_end = inside_begin + m[m.Count - 1].Index;
+							tag_end = inside_begin + m[0].Index + m[0].ToString().Length;
 							tag_found = true;
 							
 							break;
@@ -247,7 +248,7 @@ public class XMLDocument
 			
 			if (!parse_error)
 			{
-				string inside = s.Substring(inside_begin, inside_end);
+				string inside = s.Substring(inside_begin, (inside_end - inside_begin));
 				
 				s = s.Substring(tag_end);
 				
