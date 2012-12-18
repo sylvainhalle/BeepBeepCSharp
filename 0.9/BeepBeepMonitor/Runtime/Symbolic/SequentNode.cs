@@ -193,7 +193,7 @@ public class SequentNode
 			Atom x = ((FOForAll)o).getQuantifiedVariable();
 			HashSet<Atom> s = m.getDomain(p);
 			
-			oc1 = Outcome.FALSE;
+			oc1 = Outcome.TRUE;
 			
 			foreach (Atom a in s)
 			{
