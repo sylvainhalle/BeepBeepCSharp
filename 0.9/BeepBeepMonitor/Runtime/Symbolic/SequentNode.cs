@@ -139,7 +139,7 @@ public class SequentNode
 			o2 = ((OperatorImplies)o).getRightOperand();
 			oc2 = isSatisfiedInCurrentState(o2, m);
 			
-			return threeValuedOr(oc1, oc2);
+			return threeValuedOr(threeValuedNot(oc1), oc2);
 		}
 		
 		else if (o.GetType() == typeof(OperatorU))
