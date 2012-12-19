@@ -72,7 +72,7 @@ public class WatcherNode : SequentNode
     	// used; TODO: redesign with method overriding
 		HashSet<WatcherNode> spawnedSet, outSet = new HashSet<WatcherNode>();
 		WatcherNode wn;
-		Operator o1, o2, o3;
+		Operator o2, o3;
 		
 		// Picks a formula and removes it from Gamma
 		foreach (Operator o in m_gamma)

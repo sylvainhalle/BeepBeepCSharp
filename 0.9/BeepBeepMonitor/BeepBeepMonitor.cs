@@ -7,11 +7,8 @@ public class BeepBeepMonitor
 {
 	public static long serialVersionUID = 1;
 	
-	private int m_verbosity = 0;
 	private int m_numMessages = 0;
 	private long m_totalElapsed = 0;
-	private int m_guiWidth = 96;
-	private int m_guiHeight = 16;
 	private string m_display = "";
 	private List<LTLFOWatcher> m_watchers = new List<LTLFOWatcher>();
 	

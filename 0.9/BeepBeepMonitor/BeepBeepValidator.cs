@@ -91,6 +91,7 @@ public class BeepBeepValidator
 		
 		catch (IOException o)
 		{
+			System.Diagnostics.Debug.Print (o.ToString());
 			return null;
 		}
 		
@@ -100,6 +101,7 @@ public class BeepBeepValidator
 	/**
 	 * @param args
 	 */
+	#pragma warning disable 219
 	public static void main(string[] args)
 	{
 		FileStream fs = null;

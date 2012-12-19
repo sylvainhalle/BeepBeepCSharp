@@ -88,7 +88,7 @@ public class OperatorEquals : BinaryOperator
 			
 			catch (System.FormatException fe)
 			{
-				Debug.Log(fe);
+				System.Diagnostics.Debug.Print(fe.ToString());
 			}
 
             // We are here: LHS and RHS are not both numbers

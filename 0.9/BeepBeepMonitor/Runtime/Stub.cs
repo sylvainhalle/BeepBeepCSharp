@@ -192,7 +192,8 @@ public class Stub
         Operator o = instantiateFormula(formulae);
         m_generator.setFormula(o);
 	}
-
+	
+	#pragma warning disable 219
     public string generate()
     {
         string sOut = "";

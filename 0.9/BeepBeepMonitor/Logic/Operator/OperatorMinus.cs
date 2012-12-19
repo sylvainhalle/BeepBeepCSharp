@@ -79,6 +79,7 @@ public class OperatorMinus : BinaryOperator
 			
 			catch (System.FormatException fe)
 			{
+				System.Diagnostics.Debug.Print (fe.ToString());
 			}
 
             // We are here: LHS and RHS are not both numbers

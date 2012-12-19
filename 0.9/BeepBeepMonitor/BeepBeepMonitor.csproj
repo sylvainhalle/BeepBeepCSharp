@@ -80,7 +80,6 @@
     <Compile Include="Runtime\Symbolic\WatcherMessage.cs" />
     <Compile Include="Runtime\Symbolic\WatcherNode.cs" />
     <Compile Include="Util\CommandLineProcessor.cs" />
-    <Compile Include="Util\ProcessCommunicator.cs" />
     <Compile Include="Util\RegexIterator.cs" />
     <Compile Include="Util\SimpleFileReader.cs" />
     <Compile Include="Util\SimpleFileWriter.cs" />
@@ -141,7 +140,6 @@
     <None Include="Runtime\Symbolic\WatcherMessage.cs.meta" />
     <None Include="Runtime\Symbolic\WatcherNode.cs.meta" />
     <None Include="Util\CommandLineProcessor.cs.meta" />
-    <None Include="Util\ProcessCommunicator.cs.meta" />
     <None Include="Util\RegexIterator.cs.meta" />
     <None Include="Util\SimpleFileReader.cs.meta" />
     <None Include="Util\SimpleFileWriter.cs.meta" />

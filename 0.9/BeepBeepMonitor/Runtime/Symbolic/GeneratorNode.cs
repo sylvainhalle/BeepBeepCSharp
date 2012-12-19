@@ -278,7 +278,7 @@ public class GeneratorNode : SequentNode
 		}
 		
 		// Iterate over domain
-		HashSet<Constant> oplus_domain = getOPlusDomain(qualifier);
+		//HashSet<Constant> oplus_domain = getOPlusDomain(qualifier);
 		HashSet<Constant> domain = op.getDomain();
 		SubsetIterator<Constant> it = new SubsetIterator<Constant>(domain); //,oplus_domain
 		
