@@ -168,7 +168,7 @@ public class LTLStringParser : OperatorStringParser
 		if (flag)
 		{
 			Regex r = new Regex("^(\\w+)\\s*(.*)$");
-			MatchCollection m = r.Matches(sTrim.Substring(1, quantRight));
+			MatchCollection m = r.Matches(sTrim.Substring(1, quantRight - 1));
 			
 			if (m.Count > 0)
 			{
@@ -200,7 +200,7 @@ public class LTLStringParser : OperatorStringParser
             //foq.setQualifiedVariable(sTrim.substring(1, quantRight));
 			parLeft = sTrim.IndexOf("(", (quantRight + 1));
             //parRight = sTrim.indexOf(")", parLeft);
-			o = parseFromString(sTrim.Substring((parLeft + 1), sTrim.Length - 1), domains);
+			o = parseFromString(sTrim.Substring((parLeft + 1), sTrim.Length - 1 - (parLeft + 1)), domains);
 			foq.setOperand(o);
 			
 			return foq;
@@ -241,7 +241,7 @@ public class LTLStringParser : OperatorStringParser
 		if (flag)
 		{
 			parLeft = sTrim.IndexOf("(");
-			o = parseFromString(sTrim.Substring((parLeft + 1), sTrim.Length - 1), domains);
+			o = parseFromString(sTrim.Substring((parLeft + 1), sTrim.Length - 1 - (parLeft + 1)), domains);
 			uo.setOperand(o);
 			
 			return uo;
@@ -277,14 +277,14 @@ public class LTLStringParser : OperatorStringParser
 				
 				if (parNum == 0)
 				{
-					sLeft = sTrim.Substring(1, m.Count - 1);
+					sLeft = sTrim.Substring(1, m.Count - 1 - 1);
 					break;
 				}
 			}
 			
 			parLeft = sTrim.IndexOf("(", m.Count - 1);
-			binaryOp = sTrim.Substring(m.Count + 1, parLeft - 1).Trim();
-			sRight = sTrim.Substring(parLeft + 1, sTrim.Length - 1).Trim();
+			binaryOp = sTrim.Substring(m.Count + 1, parLeft - 1 - (m.Count + 1)).Trim();
+			sRight = sTrim.Substring(parLeft + 1, sTrim.Length - 1 - (parLeft + 1)).Trim();
 			o = parseFromString(sLeft, domains);
 			o2 = parseFromString(sRight, domains);
 			
@@ -368,13 +368,13 @@ public class LTLStringParser : OperatorStringParser
 			if (sTrim[0] == '{')
 			{
                 // Constants are surrounded by braces
-				a = new Constant(sTrim.Substring(1, sTrim.Length - 1));
+				a = new Constant(sTrim.Substring(1, sTrim.Length - 1 - 1));
 			}
 			
 			else if (sTrim[0] == '/')
 			{
                 // XPaths are surrounded by forward slashes
-				a = new ConstantPath(sTrim.Substring(1, sTrim.Length - 1));
+				a = new ConstantPath(sTrim.Substring(1, sTrim.Length - 1 - 1));
 			}
 			
 			else
