@@ -201,7 +201,7 @@ public class GeneratorNode : SequentNode
 		return true;
 	}
 	
-	public void addToDelta(Operator o)
+	public new void addToDelta(Operator o)
 	{
 		base.addToDelta(o);
 		

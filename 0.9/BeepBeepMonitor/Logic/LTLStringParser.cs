@@ -89,7 +89,7 @@ public class LTLStringParser : OperatorStringParser
 		return s;
 	}
 	
-	public static Operator parseFromString(string s)
+	public static new Operator parseFromString(string s)
 	{
 		return parseFromString(s, null);
 	}

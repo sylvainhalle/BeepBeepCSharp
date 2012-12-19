@@ -124,7 +124,7 @@ public class SymbolicWatcher : LTLFOWatcher
 	 * 
 	 * @return The outcome of the trace.
 	 */
-	public Outcome getOutcome()
+	public new Outcome getOutcome()
 	{		
 		if (m_nodes.Count == 0)
 		{
@@ -142,7 +142,7 @@ public class SymbolicWatcher : LTLFOWatcher
 		return Outcome.INCONCLUSIVE;
 	}
 	
-	public Outcome checkFile(string filename)
+	public new Outcome checkFile(string filename)
 	{
 		Outcome oc = Outcome.FALSE;
 		

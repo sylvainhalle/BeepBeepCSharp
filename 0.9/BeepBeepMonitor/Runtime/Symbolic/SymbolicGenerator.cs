@@ -332,7 +332,7 @@ public class SymbolicGenerator : RuntimeGenerator
 		return true;
 	}
 	
-	public string ToString()
+	public override string ToString()
 	{
 		return m_nodes.ToString();
 	}

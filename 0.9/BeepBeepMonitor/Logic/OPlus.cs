@@ -74,7 +74,7 @@ public class OPlus : FOExists
     
     }*/
 	
-	public string ToString()
+	public override string ToString()
 	{
 		return (m_unicodeSymbol + m_qualifier + " " + m_operand.ToString());
 	}

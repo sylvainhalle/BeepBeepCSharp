@@ -29,12 +29,7 @@ using System.Collections;
  *
  */
 public class LossOfSoundnessException : System.Exception
-{
-	/**
-	* 
-	*/
-	private static long serialVersionUID = 1L;
-	
+{	
 	/**
 	* 
 	*/

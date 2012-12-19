@@ -150,7 +150,7 @@ public class UnaryOperator : Operator
      * @return A Map which associates, for each variable name, the qualified
      *         fields over which it quantifies.
      */
-	public Dictionary<string, string> getVariableAssociations()
+	public override Dictionary<string, string> getVariableAssociations()
 	{
 		return m_operand.getVariableAssociations();
 	}
