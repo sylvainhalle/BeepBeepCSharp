@@ -260,9 +260,12 @@ public class LTLStringParser : OperatorStringParser
 			Regex r = new Regex("(\\(|\\))");
 			MatchCollection m = r.Matches(sTrim);
 			
+			int mend = -1;
 			for (int i = 0; i < m.Count; i++)
 			{
-				Match m2 = m[0];
+				Match m2 = m[i];
+				mend = m[i].Groups[0].Index + m[i].Groups[0].Length;
+				
 				GroupCollection g = m2.Groups;
 				
 				if (g[0].ToString().Equals("("))
@@ -277,13 +280,14 @@ public class LTLStringParser : OperatorStringParser
 				
 				if (parNum == 0)
 				{
-					sLeft = sTrim.Substring(1, m.Count - 1 - 1);
+					sLeft = sTrim.Substring(1, mend - 1 - 1);
 					break;
 				}
 			}
 			
-			parLeft = sTrim.IndexOf("(", m.Count - 1);
-			binaryOp = sTrim.Substring(m.Count + 1, parLeft - 1 - (m.Count + 1)).Trim();
+			parLeft = sTrim.IndexOf("(", mend);
+			int left_var = mend + 1;
+			binaryOp = sTrim.Substring(left_var, parLeft - left_var - 1).Trim();
 			sRight = sTrim.Substring(parLeft + 1, sTrim.Length - 1 - (parLeft + 1)).Trim();
 			o = parseFromString(sLeft, domains);
 			o2 = parseFromString(sRight, domains);
@@ -388,6 +392,7 @@ public class LTLStringParser : OperatorStringParser
 
         // Down there, none of the previous cases has fired: return o, which is
         // null
+		System.Diagnostics.Debug.Assert (false);
 		return o;
 	}
 }
