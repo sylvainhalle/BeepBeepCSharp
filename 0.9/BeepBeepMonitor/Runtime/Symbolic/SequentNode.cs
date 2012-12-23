@@ -93,12 +93,39 @@ public class SequentNode
 		}
 		
 		else if (o.GetType() == typeof(OperatorX) || 
-			o.GetType() == typeof(OperatorG) ||
-			o.GetType() == typeof(OperatorEquals))
+			o.GetType() == typeof(OperatorG))
 		{
 			// TODO
 			// assert(false);
 			return Outcome.INCONCLUSIVE;
+		}
+		
+		else if (o.GetType() == typeof(OperatorEquals))
+		{
+		  o1 = ((OperatorEquals)o).getLeftOperand();
+	      o2 = ((OperatorEquals)o).getRightOperand();
+	      if (o1.GetType () == typeof(ConstantPath))
+	      {
+	    	  // Left member is a path; we compare that path
+	    	  // to the right member
+	    	  HashSet<Atom> dom = m.getDomain((ConstantPath) o1);
+
+	    	  foreach (Atom a in dom)
+	    	  {
+	    		  // We return true if at least one value at the end
+	    		  // of the path equals o2
+	    		  if (a.Equals(o2))
+	    			  return Outcome.TRUE;
+	    	  }
+	    	  return Outcome.FALSE;
+	      }
+	      else
+	      {
+	    	  // We compare directly the two members
+	    	  if (o1.Equals(o2))
+	    		  return Outcome.TRUE;
+	      }
+	      return Outcome.FALSE;
 		}
 		
 		else if (o.GetType() == typeof(OperatorAnd))
